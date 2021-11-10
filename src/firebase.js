@@ -2,14 +2,22 @@ import firebase from "firebase";
 import Swal from "sweetalert2";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAlwKsg4-W1ygjff9nad7ea4P_P9Kl1-Qo",
-  authDomain: "nayef-432fd.firebaseapp.com",
-  databaseURL: "https://nayef-432fd-default-rtdb.firebaseio.com",
-  projectId: "nayef-432fd",
-  storageBucket: "nayef-432fd.appspot.com",
-  messagingSenderId: "203699411680",
-  appId: "1:203699411680:web:a1bde85a790022b00f0e85",
-  measurementId: "G-Z6NBNPWQ5Q"
+  apiKey: "AIzaSyBPcvADPeXHwRb7tRYD9uKNz-DLSixXx3U",
+  authDomain: "omarnet.firebaseapp.com",
+  databaseURL: "https://omarnet-default-rtdb.firebaseio.com/",
+   projectId: "omarnet",
+  storageBucket: "omarnet.appspot.com",
+  messagingSenderId: "1019187639201",
+  appId: "1:1019187639201:web:9d66c845d541a594bdd1e0",
+
+  // apiKey: "AIzaSyAlwKsg4-W1ygjff9nad7ea4P_P9Kl1-Qo",
+  // authDomain: "nayef-432fd.firebaseapp.com",
+  // databaseURL: "https://nayef-432fd-default-rtdb.firebaseio.com",
+  // projectId: "nayef-432fd",
+  // storageBucket: "nayef-432fd.appspot.com",
+  // messagingSenderId: "203699411680",
+  // appId: "1:203699411680:web:a1bde85a790022b00f0e85",
+  // measurementId: "G-Z6NBNPWQ5Q"
 };
 
 const app = firebase.initializeApp(firebaseConfig);
@@ -40,8 +48,9 @@ const signInWithGoogle = async () => {
   }
 };
 
-const signInWithEmailAndPassword = async (email, password) => {
-  if(!email || !password){
+const signInWithEmailAndPassword = async (e,email, password) => {
+  e.preventDefault();
+  if (!email || !password) {
     return;
   }
   try {
@@ -50,24 +59,14 @@ const signInWithEmailAndPassword = async (email, password) => {
     console.error(err);
     Swal.fire({
       title: err,
-      icon: '',
-      confirmButtonText: 'ok'
-    })
-
-   
+      icon: "",
+      confirmButtonText: "ok",
+    });
   }
 };
-
-
 
 const logout = () => {
   auth.signOut();
 };
 
-export {
-  auth,
-  db,
-  signInWithEmailAndPassword,
-  
-  logout,
-};
+export { auth, db, signInWithEmailAndPassword, logout };

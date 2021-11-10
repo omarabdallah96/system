@@ -1,11 +1,28 @@
 .containergrid{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto ;
 }
+@media only screen and (max-width: 900px) {
+    .containergrid{
+        display: grid;
+        grid-template-columns: auto  auto ;
+    }
+  }
 @media only screen and (max-width: 600px) {
     .containergrid{
         display: grid;
         grid-template-columns: auto  ;
     }
   }
- 
+  tr {
+    height: 10px !important;
+  }
+ .MuiTableRow-root{
+     height: 10px !important;
+ }
+ tr td {
+    height: auto !important;
+    padding: 0 !important;
+    font-size: large !important;
+ }
+tr:nth-child(even){background-color: #f2f2f2;}

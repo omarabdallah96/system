@@ -4,15 +4,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router";
 import "./Dashboard.css";
 import { auth, db, logout } from "./firebase";
-import Home from "./Home";
+import Persons from "./Persons";
 import Product from "./Product/product";
 
-import {
- 
-  ExitToApp,
-  LocalCafe,
-  Person,
-} from "@material-ui/icons";
+import { ExitToApp, Home, LocalCafe, Person } from "@material-ui/icons";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
@@ -41,19 +38,26 @@ function Dashboard() {
       setName(data.name);
     } catch (err) {
       console.error(err);
-      alert("ناكد من اتصالك بالانترنت");
+      Swal.fire({
+        icon: "",
+
+        text: "خطأ في جلب البيانات",
+
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "تم",
+      });
     }
   };
 
   useEffect(() => {
     if (loading) return;
-    if (!user) return history.replace("/");
+    if (!user) return history.replace("/login");
 
     fetchUserName();
   }, [user, loading]);
 
   return (
-    <div className="home-content">
+    <div className="Person-content">
       <br />
       &nbsp;
       <Button
@@ -67,10 +71,14 @@ function Dashboard() {
       <Button onClick={handletabs} variant="contained">
         {toggle ? <Person /> : <LocalCafe />}
       </Button>
+      &nbsp;
+      <Button onClick={()=>history.push('/')} className="homebutton" variant="contained">
+          <Home style={{}} />
+      </Button>
       <center>
         <br />
       </center>
-      <div>{toggle ? <Home /> : <Product />}</div>
+      <div>{toggle ? <Persons /> : <Product />}</div>
     </div>
   );
 }

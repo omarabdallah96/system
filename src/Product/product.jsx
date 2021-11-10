@@ -127,7 +127,7 @@ function App() {
          <Button
         variant="contained"
         onClick={handleperson}
-        style={{ background: [show ? "green" : "red"],color:"white" ,fontSize:10 }}
+        style={{ background: [show ? "#3085d6" : "red"],color:"white" ,fontSize:10 }}
       >
         {title}
       </Button>
@@ -159,7 +159,7 @@ function App() {
             onChange={(event) => setprice(event.target.value)}
           />
        
-       <input accept="image/webp" id="image" type="file" hidden onChange={onFileChange} />
+       <input accept="image/png" id="image" type="file" hidden onChange={onFileChange} />
        
          <Button variant="outlined" color="primary" >
          <label htmlFor="image">product image</label>
@@ -239,7 +239,7 @@ function App() {
           </Button>
           <Button
           
-          disabled={!updateprice || !update} onClick={editTodo} variant="contained"  style={{background:"green",color:"white"}}>
+          disabled={!updateprice || !update} onClick={editTodo} variant="contained"  style={{background:"#3085d6",color:"white"}}>
             Save
           </Button>
         </DialogActions>
