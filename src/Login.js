@@ -3,8 +3,17 @@ import { Link, useHistory } from "react-router-dom";
 import { auth, signInWithEmailAndPassword, signInWithGoogle } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
-import loginimage from "./image/login.webp";
-import { Avatar, Box, Button, Checkbox, Container, FormControlLabel, Grid, TextField, Typography } from "@material-ui/core";
+import {
+  Avatar,
+  Box,
+  Button,
+  Checkbox,
+  Container,
+  FormControlLabel,
+  Grid,
+  TextField,
+  Typography,
+} from "@material-ui/core";
 import { Lock } from "@material-ui/icons";
 function Login() {
   const [email, setEmail] = useState("");
@@ -22,23 +31,30 @@ function Login() {
 
   return (
     <div>
-      
       <Container component="main" maxWidth="xs">
         <Box
           sx={{
             marginTop: 88,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar style={{background:"rgb(231, 76, 60)"}} sx={{ m: 1, backgroundColor: "rgb(231, 76, 60)" }}>
+          <Avatar
+            style={{ background: "rgb(231, 76, 60)" }}
+            sx={{ m: 1, backgroundColor: "rgb(231, 76, 60)" }}
+          >
             <Lock />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={(e) => signInWithEmailAndPassword(e,email, password)}noValidate sx={{ mt: 1 }}>
+          <Box
+            component="form"
+            onSubmit={(e) => signInWithEmailAndPassword(e, email, password)}
+            noValidate
+            sx={{ mt: 1 }}
+          >
             <TextField
               margin="normal"
               required
@@ -47,7 +63,6 @@ function Login() {
               label="Email Address"
               name="email"
               autoComplete="email"
-              
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -78,6 +93,13 @@ function Login() {
             >
               Sign In
             </Button>
+            <br />
+            <center style={{ marginTop: 10, color: "rgb(231, 76, 60)" }}>
+              developed By :
+              <a href="https://www.linkedin.com/in/omar-abdallah96/" target="_blank">
+                Omar Abdallah
+              </a>
+            </center>
             <Grid container>
               <Grid item xs>
                 {/* <Link href="#" variant="body2">

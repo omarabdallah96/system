@@ -2,22 +2,21 @@ import firebase from "firebase";
 import Swal from "sweetalert2";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBPcvADPeXHwRb7tRYD9uKNz-DLSixXx3U",
-  authDomain: "omarnet.firebaseapp.com",
-  databaseURL: "https://omarnet-default-rtdb.firebaseio.com/",
-   projectId: "omarnet",
-  storageBucket: "omarnet.appspot.com",
-  messagingSenderId: "1019187639201",
-  appId: "1:1019187639201:web:9d66c845d541a594bdd1e0",
-
-  // apiKey: "AIzaSyAlwKsg4-W1ygjff9nad7ea4P_P9Kl1-Qo",
-  // authDomain: "nayef-432fd.firebaseapp.com",
-  // databaseURL: "https://nayef-432fd-default-rtdb.firebaseio.com",
-  // projectId: "nayef-432fd",
-  // storageBucket: "nayef-432fd.appspot.com",
-  // messagingSenderId: "203699411680",
-  // appId: "1:203699411680:web:a1bde85a790022b00f0e85",
-  // measurementId: "G-Z6NBNPWQ5Q"
+  // apiKey: "AIzaSyD_FPk1s0Li56iVVLd9b8RkHUaIdqPoPgk",
+  // authDomain: "moussa-1c528.firebaseapp.com",
+  // databaseURL: "https://moussa-1c528-default-rtdb.firebaseio.com",
+  // projectId: "moussa-1c528",
+  // storageBucket: "moussa-1c528.appspot.com",
+  // messagingSenderId: "611309830797",
+  // appId: "1:611309830797:web:c2a9f8a234dbcf282ad8c4",
+  apiKey: "AIzaSyDrw2jXLbZuN7vNfqdN_BkSuMudzPtlScI",
+  authDomain: "omar-lb.firebaseapp.com",
+  projectId: "omar-lb",
+  storageBucket: "omar-lb.appspot.com",
+  messagingSenderId: "636818919929",
+  appId: "1:636818919929:web:148a1ee3fbfbc920372d28",
+  measurementId: "G-DV7E7C1BF0",
+  databaseURL: "https://omar-lb-default-rtdb.firebaseio.com/",
 };
 
 const app = firebase.initializeApp(firebaseConfig);
@@ -48,7 +47,7 @@ const signInWithGoogle = async () => {
   }
 };
 
-const signInWithEmailAndPassword = async (e,email, password) => {
+const signInWithEmailAndPassword = async (e, email, password) => {
   e.preventDefault();
   if (!email || !password) {
     return;

@@ -10,6 +10,8 @@ import { Typography } from "@material-ui/core";
 import { MoreVert, WhatsApp } from "@material-ui/icons";
 import { useEffect } from "react";
 import { db } from "../firebase";
+import { app_data_config } from "../app_config";
+
 function HomePage(props) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -51,10 +53,14 @@ function HomePage(props) {
         </div>
       ) : (
         <>
+        
+
           <center>
             {" "}
             <h3 className="MuiTypography-h5 " style={{ color: "#e74c3c" }}>
-              Omar Net أهلا بكم في محل
+              {app_data_config[0].company}
+
+              {app_data_config[0].message}
             </h3>
           </center>
           <div className="containergrid">
@@ -74,7 +80,7 @@ function HomePage(props) {
                     <IconButton aria-label="settings">
                       <a
                         target="_blank"
-                        href={`https://api.whatsapp.com/send?phone=+96170342096&text=${data.product_name}`}
+                        href={`https://api.whatsapp.com/send?phone=+${app_data_config[0].phone}&text=${data.product_name}`}
                       >
                         <WhatsApp style={{ color: "#27ae60" }} />
                       </a>

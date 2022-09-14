@@ -44,6 +44,7 @@ import {
 
 function App(props) {
   const [todos, setTodos] = useState([]);
+  const whatsapp_text = "Moussa cell %0a مرحبا بك حسابك هو :";
   const [input, setInput] = useState("");
   const [balance, setBalance] = useState("0");
   const [phone, setphone] = useState("");
@@ -328,9 +329,11 @@ function App(props) {
         </Table>
       </TableContainer>
       <Dialog
-        style={{
-          // backgroundImage: "linear-gradient( #e52e71,#ff8a00)",
-        }}
+        style={
+          {
+            // backgroundImage: "linear-gradient( #e52e71,#ff8a00)",
+          }
+        }
         fullScreen
         open={open}
         onClose={handleClose}
@@ -348,32 +351,30 @@ function App(props) {
               >
                 <CardHeader
                   // avatar={
-                   
+
                   // }
                   action={
                     <IconButton aria-label="settings">
                       {/* <MoreVert /> */}
                     </IconButton>
                   }
-                  title={<h1>{todo.product_name}</h1>}
-                  subheader={<h1>{todo.price}</h1>}
+                  title={
+                    <h6>
+                      {todo.product_name} {todo.price}
+                    </h6>
+                  }
                 />
-                {/* <CardMedia
+                <CardMedia
                   component="img"
-                  style={{ height: 200 }}
+                  style={{
+                    height: "100px",
+                    width: "100px",
+                    objectFit: "cover",
+                  }}
                   image={todo.avatar}
                   alt="Paella dish"
-                /> */}
-                <CardContent>
-                <Avatar
-                      style={{ height: 100, width: 100, borderRadius: 0 }}
-                      src={todo.avatar}
-                      sx={{ bgcolor: "red" }}
-                      aria-label="recipe"
-                    >
-                      C
-                    </Avatar>
-                </CardContent>
+                />
+                <CardContent></CardContent>
                 <div style={{ textAlign: "center" }}>
                   <Button
                     name="minus"
@@ -400,7 +401,9 @@ function App(props) {
         </DialogContent>
         <DialogActions>
           <a
-            href={`https://api.whatsapp.com/send?phone=+961${updatephone}`}
+            href={`https://api.whatsapp.com/send?phone=+961${updatephone}&text=${
+              whatsapp_text + "%0a" + updatebalance
+            }`}
             target="_blank"
           >
             <WhatsAppIcon style={{ color: "#2980b9" }} />
