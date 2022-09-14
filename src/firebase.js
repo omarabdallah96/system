@@ -2,7 +2,6 @@ import firebase from "firebase";
 import Swal from "sweetalert2";
 
 const firebaseConfig = {
-
   apiKey: "AIzaSyDrw2jXLbZuN7vNfqdN_BkSuMudzPtlScI",
   authDomain: "omar-lb.firebaseapp.com",
   projectId: "omar-lb",

@@ -41,10 +41,10 @@ import {
   Paper,
   Card,
 } from "@material-ui/core";
-
+import { app_data_config } from "./app_config";
 function App(props) {
   const [todos, setTodos] = useState([]);
-  const whatsapp_text = "Moussa cell %0a مرحبا بك حسابك هو :";
+  const whatsapp_text = `${app_data_config[0].company} %0a مرحبا بك حسابك هو :`;
   const [input, setInput] = useState("");
   const [balance, setBalance] = useState("0");
   const [phone, setphone] = useState("");
