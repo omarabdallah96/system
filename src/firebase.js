@@ -2,13 +2,7 @@ import firebase from "firebase";
 import Swal from "sweetalert2";
 
 const firebaseConfig = {
-  // apiKey: "AIzaSyD_FPk1s0Li56iVVLd9b8RkHUaIdqPoPgk",
-  // authDomain: "moussa-1c528.firebaseapp.com",
-  // databaseURL: "https://moussa-1c528-default-rtdb.firebaseio.com",
-  // projectId: "moussa-1c528",
-  // storageBucket: "moussa-1c528.appspot.com",
-  // messagingSenderId: "611309830797",
-  // appId: "1:611309830797:web:c2a9f8a234dbcf282ad8c4",
+
   apiKey: "AIzaSyDrw2jXLbZuN7vNfqdN_BkSuMudzPtlScI",
   authDomain: "omar-lb.firebaseapp.com",
   projectId: "omar-lb",
