@@ -39,9 +39,7 @@ function Balance(props) {
         placeItems: "center",
       }}
     >
-        <h6>
-            قم بكتابة رقم هاتفك للحصول على حسابك لدينا
-        </h6>
+      <h6>قم بكتابة رقم هاتفك للحصول على حسابك لدينا</h6>
       <TextField
         variant="outlined"
         margin="normal"
@@ -79,8 +77,7 @@ function Balance(props) {
                       marginTop: 10,
                       borderRadius: 10,
                       fontSize: 20,
-                      boxShadow: "-1px -1px 24px -7px rgba(0,0,0,0.75)"
-
+                      boxShadow: "-1px -1px 24px -7px rgba(0,0,0,0.75)",
                     }}
                   >
                     {" "}
